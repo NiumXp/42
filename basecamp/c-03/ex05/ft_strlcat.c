@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 03:25:26 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/08 08:20:34 by nximenes         ###   ########.fr       */
+/*   Created: 2022/02/08 08:27:00 by nximenes          #+#    #+#             */
+/*   Updated: 2022/02/08 17:55:37 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
 	unsigned int	length;
 
@@ -20,24 +20,20 @@ int	ft_strlen(char *str)
 	return (length);
 }
 
-int	ft_startswith(char *prefix, char *str)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	length;
 	unsigned int	index;
+	unsigned int	length;
+	int				number;
 
 	index = 0;
-	length = ft_strlen(prefix);
-	while (*prefix++ == *str++)
-		++index;
-	return (length == index);
-}
-
-char	*ft_strstr(char *str, char *to_find)
-{
-	while (*str)
+	length = ft_strlen(dest);
+	number = size - length;
+	while (src[index] && number > 1)
 	{
-		if (ft_startswith(to_find, str++))
-			return (str - 1);
+		dest[index + length] = src[index];
+		++index;
+		--number;
 	}
-	return (0);
+	return (length + size - index);
 }
