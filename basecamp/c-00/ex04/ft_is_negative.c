@@ -18,6 +18,9 @@ void	ft_is_negative(int n)
 {
 	char	letter;
 
-	letter = 'N' * (n < 0) + 'P' * (n > 0);
+	letter = 'N' * (n < 0) + 'P' * (n >= 0);
 	write(STDOUT, &letter, 1);
 }
+
+
+void	ft_is_negative(void);

@@ -11,71 +11,55 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-
-int	math_power(int n, int b)
-{
-	int	ref;
-
-	if (b == 0)
-		return (1);
-	ref = n;
-	while ((--b) > 0)
-	{
-		n *= ref;
-	}
-	return (n);
-}
-
-int	reverse(int n)
-{
-	int	rev;
-
-	rev = 0;
-	while (n != 0)
-	{
-		rev *= 10;
-		rev += n % 10;
-		n /= 10;
-	}
-	return (rev);
-}
-
-int	is_repeated(int n, int max)
-{
-	if (n > 10 && (reverse(n) == n || n % 10 == 0 || reverse(n) < n))
-		return (1);
-	return (0);
-}
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
+void	ft_allzero(char *arr, unsigned int size)
+{
+	while (size--)
+	{
+		*arr++ = '\0';
+	}
+}
+
+void	ft_putstr(char *c)
+{
+	while (*c)
+		write(1, c++, 1);
+}
+
+#include <stdio.h>
 void	ft_print_combn(int n)
 {
-	int		max;
-	int		num;
-	int		pos;
-	char	chr;
-	int		unit;
+	unsigned int	index;
+	char				left;
+	char			buff[10];
 
-	max = math_power(10, n) - 1;
-	num = 0;
-	while ((num++) < max)
+	index = 0;
+	ft_allzero(buff, n + 5);
+	while (index < 10)
 	{
-		pos = n;
-		if (!is_repeated(num, max))
+		if (index == 0)
+			left = '9';
+		else
+			left = buff[index + 1];
+
+		while (buff[index] < left)
 		{
-			while ((pos--) > 0)
-			{
-				unit = num / math_power(10, pos) % 10;
-				chr = (char)('0' + unit);
-				ft_putchar(chr);
-			}
-			ft_putchar(',');
+			ft_putstr(buff);
 			ft_putchar(' ');
+			buff[index]++;
 		}
+		buff[index] = left + 1;
+		++index;
 	}
+}
+
+int	main(void)
+{
+	ft_print_combn(2);
+	return (0);
 }
