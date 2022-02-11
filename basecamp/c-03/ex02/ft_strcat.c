@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 03:25:02 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/09 19:35:31 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/09 23:54:15 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	*ft_strcat(char *dest, char *src)
 	length = 0;
 	while (*dest++)
 		++length;
-	ft_strcpy(dest, src);
-	return (dest - length);
+	ft_strcpy(dest - 1, src);
+	return (dest - length - 1);
 }
