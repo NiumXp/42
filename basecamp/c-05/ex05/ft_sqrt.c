@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 02:04:55 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/10 16:18:12 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/14 01:10:21 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_sqrt(int nb)
 {
 	int	x;
 
-	x = x;
+	x = 0;
 	while ((x * x) < nb)
 		x++;
 	if ((x * x) == nb)
