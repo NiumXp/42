@@ -6,16 +6,18 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 02:04:55 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/14 20:01:25 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/14 20:14:32 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#define MAX_INT_ROOT 46340
 
 int	ft_sqrt(int nb)
 {
 	int	x;
 
 	x = 0;
-	while ((x * x) < nb && x <= 46340)
+	while ((x * x) < nb && x <= MAX_INT_ROOT)
 		x++;
 	if ((x * x) == nb)
 		return (x);
