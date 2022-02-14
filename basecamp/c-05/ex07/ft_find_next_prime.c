@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 14:57:07 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/10 15:53:38 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/14 01:09:10 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
+	if (nb <= 1)
+		return (2);
 	while (1)
 	{
 		if (ft_is_prime(nb))
