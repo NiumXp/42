@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 04:10:52 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/14 04:15:16 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:59:00 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	*ft_range(int min, int max)
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	**range = ft_range(min, max);
-	if (**range == NULL)
+	*range = ft_range(min, max);
+	if (*range == NULL)
 		return (-1);
 	return (ft_rsize(min, max));
 }
