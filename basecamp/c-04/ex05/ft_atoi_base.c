@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 04:19:36 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/16 15:31:55 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:07:22 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_ushort	ft_is_invalid_base(char *base)
 	length = 0;
 	while (*base)
 	{
-		if (*base == '+' || *base == '-')
+		if (ft_strindex(*base, "+- \f\n\r\t\v") != -1)
 			return (TRUE);
 		++base;
 		++length;
