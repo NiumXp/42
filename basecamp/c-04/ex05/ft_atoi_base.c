@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 04:19:36 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/09 13:02:59 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:31:55 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	ft_atoi_base(char *str, char *base)
 		index = ft_strindex(*str++, base);
 		if (index == -1)
 			break ;
-		number = ft_numop(number * length, base[index] - '0', !is_negative);
+		number = ft_numop(number * length, index, !is_negative);
 	}
 	return (number);
 }

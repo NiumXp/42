@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 23:38:48 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/09 04:13:58 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/16 09:16:43 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	t_ushort	index;
 	t_ushort	length;
+	int			anchor;
 	char		buffer[32 + 1];
 
 	if (ft_is_invalid_base(base))
@@ -80,7 +81,10 @@ void	ft_putnbr_base(int nbr, char *base)
 		ft_putchar('-');
 	while (nbr != 0)
 	{
-		buffer[index++] = base[!!(nbr % length)];
+		anchor = (nbr % length);
+		if (anchor < 0)
+			anchor = -anchor;
+		buffer[index++] = base[anchor];
 		nbr /= length;
 	}
 	while (index > 0)
