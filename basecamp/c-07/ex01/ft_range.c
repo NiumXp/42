@@ -12,31 +12,18 @@
 
 #include <malloc.h>
 
-int	ft_rsize(int x, int y)
-{
-	if (y < x)
-		return (x - y);
-	return (y - x);
-}
-
 int	*ft_range(int min, int max)
 {
-	int		*range;
-	int		size;
+	int	*range;
+	int	index;
+	int	size;
 
 	if (min >= max)
 		return (NULL);
-	size = ft_rsize(min, max);
+	index = 0;
+	size = (max - min);
 	range = (int *)malloc(sizeof(int) * size);
-	while (size-- > 0)
-		range[size] = min++;
+	while (index < size)
+		range[index++] = min++;
 	return (range);
-}
-
-int	main(void)
-{
-	int	*ptr;
-
-	ptr = 1;
-	return (0);
 }

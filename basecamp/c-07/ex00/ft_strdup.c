@@ -27,11 +27,18 @@ t_uint	ft_strsize(char *str)
 char	*ft_strdup(char *src)
 {
 	t_uint	size;
+	t_uint	index;
 	char	*ptr;
 
+	index = 0;
 	size = ft_strsize(src);
 	ptr = (char *)malloc(sizeof(char) * size);
-	while (--size)
-		ptr[size] = src[size];
+	if (ptr == NULL)
+		return (NULL);
+	while (index < size)
+	{
+		ptr[index] = src[index];
+		++index;
+	}
 	return (ptr);
 }

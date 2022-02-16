@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 04:16:44 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/14 18:51:10 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/16 08:50:46 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*string;
 	int		index;
 
+	if (size < 0)
+		return (NULL);
 	if (!size)
 		return (ft_empty_str());
 	index = 0;
@@ -71,6 +73,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		lengths += ft_strlen(strs[index++]);
 	lengths += (size * ft_strlen(sep));
 	string = (char *)malloc(lengths + 1);
+	if (string == NULL)
+		return (NULL);
 	index = 0;
 	while (index < size)
 	{
