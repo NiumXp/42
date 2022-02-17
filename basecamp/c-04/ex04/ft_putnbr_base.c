@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 23:38:48 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/16 09:16:43 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:14:44 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	length = ft_strlen(base);
 	if (nbr < 0)
 		ft_putchar('-');
+	if (nbr == 0)
+		ft_putchar(*base);
 	while (nbr != 0)
 	{
 		anchor = (nbr % length);
