@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 08:27:00 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/15 10:30:55 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:53:23 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,22 @@ t_uint8	ft_strlen(char *str)
 	return (length);
 }
 
-t_uint8	ft_strlcat(char *dest, char *src, unsigned int size)
+t_uint8	ft_strlcat(char *dest, char *src, t_uint8 size)
 {
-	t_uint8	dsize;
-	t_uint8	ssize;
-	t_uint8	index;
+	t_uint8	i;
+	t_uint8	len_dest;
+	t_uint8	len_source;
 
-	ssize = ft_strlen(src);
-	if (size < 1)
-		return (ssize);
-	dsize = ft_strlen(dest);
-	if (size < dsize)
-		return (ssize + dsize);
-	index = 0;
-	while (src[index] && (index + dsize) < (size - 1))
+	i = 0;
+	len_dest = ft_strlen(dest);
+	len_source = ft_strlen(src);
+	if (size <= len_dest)
+		return (size + len_source);
+	while (((len_dest + i) < (size - 1)) && src[i])
 	{
-		dest[index + dsize] = src[index];
-		index++;
+		dest[len_dest + i] = src[i];
+		i++;
 	}
-	dest[index + dsize] = 0;
-	return (dsize + ssize);
+	dest[len_dest + i] = '\0';
+	return (len_dest + len_source);
 }
