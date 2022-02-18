@@ -6,34 +6,40 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 04:10:52 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/16 08:48:05 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/18 07:03:28 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <malloc.h>
 
-int	*ft_range(int min, int max)
-{
-	int	*range;
-	int	index;
-	int	size;
-
-	if (min >= max)
-		return (NULL);
-	index = 0;
-	size = (max - min);
-	range = (int *)malloc(sizeof(int) * size);
-	while (index < size)
-		range[index++] = min++;
-	return (range);
-}
-
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	*range = ft_range(min, max);
+	unsigned int	index;
+
 	if (min >= max)
+	{
+		*range = 0;
 		return (0);
+	}
+	*range = (int *)malloc(sizeof(**range) * (max - min));
 	if (*range == NULL)
 		return (-1);
-	return (max - min);
+	index = 0;
+	while (min < max)
+		(*range)[index++] = min++;
+	return (index);
 }
+
+/*
+int	main(void)
+{
+	int	**range;
+	int	*ptr;
+
+	range = &ptr;
+	printf("%d\n", ft_ultimate_range(range, 3, 5));
+	printf("%d ", (*range)[0]);
+	printf("%d\n", (*range)[1]);
+	return (0);
+}
+*/

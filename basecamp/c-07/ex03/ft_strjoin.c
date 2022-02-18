@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 04:16:44 by nximenes          #+#    #+#             */
-/*   Updated: 2022/02/16 08:50:46 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/02/18 07:20:58 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_empty_str(void)
 {
 	char	*str;
 
-	str = malloc(sizeof(char));
+	str = (char *)malloc(sizeof(char));
 	*str = '\0';
 	return (str);
 }
@@ -64,18 +64,18 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*string;
 	int		index;
 
-	if (size < 0)
-		return (NULL);
 	if (!size)
 		return (ft_empty_str());
 	index = 0;
+	lengths = 0;
 	while (index < size)
 		lengths += ft_strlen(strs[index++]);
-	lengths += (size * ft_strlen(sep));
+	lengths += ((size - 1) * ft_strlen(sep));
 	string = (char *)malloc(lengths + 1);
 	if (string == NULL)
 		return (NULL);
 	index = 0;
+	string[0] = '\0';
 	while (index < size)
 	{
 		if (index != 0)
@@ -85,3 +85,17 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	return (string);
 }
+
+/*
+int	main(void)
+{
+	char	*s[] = { "Naaaathan", "aloow" };
+	char	*sep = { " , " };
+	char	*dest;
+
+	dest = ft_strjoin(3, s, sep);
+	printf("%s\n", dest);
+	free(dest);
+	return (0);
+}
+*/
