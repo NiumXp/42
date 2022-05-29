@@ -6,7 +6,7 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:47:41 by nximenes          #+#    #+#             */
-/*   Updated: 2022/04/05 19:56:04 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:03:30 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(const char *s)
 	int	size;
 
 	size = 0;
-	while (*s)
+	while (*s++)
 		++size;
 	return (size);
 }
