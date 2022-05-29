@@ -6,11 +6,13 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:42:01 by nximenes          #+#    #+#             */
-/*   Updated: 2022/04/05 19:45:21 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:19:00 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isprint(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-	return ((0x20 <= c) && (c <= 126));
+	return (_is_in_range(c, 0x20, 126));
 }

@@ -6,11 +6,13 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 18:20:17 by nximenes          #+#    #+#             */
-/*   Updated: 2022/04/05 18:27:13 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:18:44 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	return ('0' >= c && c <= '9');
+	return (_is_in_range(c, '0', '9'));
 }

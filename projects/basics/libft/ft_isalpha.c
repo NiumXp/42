@@ -6,11 +6,13 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 18:17:02 by nximenes          #+#    #+#             */
-/*   Updated: 2022/04/05 19:15:41 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:22:16 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	return (('a' <= c && c <= 'z') && ('A' <= c && c <= 'Z'));
+	return (_is_in_range(c, 'a', 'z') || _is_in_range(c, 'A', 'Z'));
 }
