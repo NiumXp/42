@@ -6,13 +6,15 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:00:05 by nximenes          #+#    #+#             */
-/*   Updated: 2022/04/06 20:00:13 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:15:46 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	if ('a' <= c && c < 'z')
-		c = c - 32;
+	if (_is_in_range(c, 'a', 'z'))
+		c ^= 32;
 	return (c);
 }

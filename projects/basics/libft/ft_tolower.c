@@ -6,13 +6,15 @@
 /*   By: nximenes <nximenes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:57:05 by nximenes          #+#    #+#             */
-/*   Updated: 2022/04/06 19:58:31 by nximenes         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:09:51 by nximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	if ('A' <= c && c < 'Z')
-		c = c + 32;
+	if (_is_in_range(c, 'A', 'Z'))
+		c |= 32;
 	return (c);
 }
